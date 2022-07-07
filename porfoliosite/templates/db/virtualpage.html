@@ -1,0 +1,254 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       
+        body{
+            display: flex;
+            justify-content: space-between;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        nav{
+            background-color: whitesmoke;
+            height: 695px;
+            width: 7%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;    
+        }
+        
+        /* @media screen and (max-width:1440px){
+            nav{
+                height: 935px;
+                width: 10%; 
+            }
+           
+        } */
+        @media screen and (max-width:1050px){
+            nav{
+                height: 810px;
+                width: 12%; 
+            }
+           
+        }
+        @media screen and (max-width:900px){
+            nav{
+                width: 12%;
+                height: 608px;
+                
+            }
+           
+        }
+        .p1{
+            text-align: center;
+            margin-top: 5px;
+        }
+        .p2{
+            text-align: center;
+            margin-top: 5px;
+        }
+        .p3{
+            text-align: center;
+            margin-top: 5px;
+        }
+        .p4{
+            text-align: center;
+            margin-top: 5px;
+        }
+       
+        .project2{
+            display: none;
+        }
+        .project-navlink:hover .p3{
+            color: darkgoldenrod;
+        }
+        .project-navlink:hover img.project1{
+            display: none;
+        }
+        .project-navlink:hover img.project2{
+            display: block;
+        }
+        .home2{
+            display: none;
+        }
+        .home-navlink:hover .p1{
+            color: #ED7899;
+        }
+        .home-navlink:hover img.home1{
+            display: none;
+        }
+        .home-navlink:hover img.home2{
+            display: block;
+        }
+        .skills2{
+            display: none;
+        }
+        .skills-navlink:hover .p2{
+            color: #2E4191;
+        }
+        .skills-navlink:hover img.skills1{
+            display: none;
+        }
+        .skills-navlink:hover img.skills2{
+            display: block;
+        }
+        .cv2{
+            display: none;
+        }
+        .cv-navlink:hover .p4{
+            color: #E1B370;
+        }
+        .cv-navlink:hover img.cv1{
+            display: none;
+        }
+        .cv-navlink:hover img.cv2{
+            display: block;
+        }
+        .contact2{
+            display: none;
+        }
+        .contact-navlink:hover .p5{
+            color: #6DCC6D;
+        }
+        .contact-navlink:hover img.contact1{
+            display: none;
+        }
+        .contact-navlink:hover img.contact2{
+            display: block;
+        }
+        a{
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            color: black;
+        }
+        #on .project1{
+            display: none;
+        }
+        #on .project2{
+            display: block;
+        }
+        #on .home1{
+            display: none;
+            
+        }
+        #on .home2{
+            display: block;
+            
+        }
+        #on .skills1{
+            display: none;
+        }
+        #on .skills2{
+            display: block;
+        }
+        #on .cv1{
+            display: none;
+        }
+        #on .cv2{
+            display: block;
+        }
+        #on .contact1{
+            display: none;
+        }
+        #on .contact2{
+            display: block;
+        }
+        #on .p1{
+            font-weight: bolder;
+            color: #ED7899;
+        }
+        #on .p2{
+            font-weight: bolder;
+            color: #2E4191;
+        }
+        #on .p3{
+            font-weight: bolder;
+            color: darkgoldenrod;
+        }
+        #on .p5{
+            font-weight: bolder;
+            color: #6DCC6D;
+        }
+        #on .p4{
+            font-weight: bolder;
+            color: #E1B370;
+        }
+
+
+
+        
+    </style>
+    <nav>
+        <a href="{% url 'homepage' %}" class="home-navlink"
+         {% if active == "homepage" %}
+             id="on"
+         {% endif %}>
+            <img class= "home1"src="{% static 'db/home1.png'%}" alt="">
+            <img class= "home2" src="{% static 'db/home2.png'%}" alt="">
+            <p class="p1"> Home </p>
+        </a> 
+
+        <a href="{% url 'skills' %}" class="skills-navlink"
+         {% if active == "skills" %}
+             id="on"
+         {% endif %}>
+            <img class= "skills1"src="{% static 'db/skills1.png'%}" alt="">
+            <img class= "skills2" src="{% static 'db/skills2.png'%}" alt="">
+            <p class="p2"> Skills </p>
+        </a>
+
+        <a href="{% url 'projects' %}" class="project-navlink"  
+         {% if active == "projects" %}
+            id="on"
+         {% endif %}>
+            <img class= "project1"src="{% static 'db/project1.png'%}" alt="">
+            <img class= "project2" src="{% static 'db/project3.png'%}" alt="">
+            <p class="p3"> Project </p>
+        </a>
+
+        <a href="{% url 'cv' %}" class="cv-navlink"
+         {% if active == "cv" %}
+             id="on"
+         {% endif %}>
+            <img class= "cv1"src="{% static 'db/cv1.png'%}" alt="">
+            <img class= "cv2" src="{% static 'db/cv3.png'%}" alt="">
+            <p class="p4"> CV </p>
+        </a>
+
+        <a href="{% url 'contact' %}" class="contact-navlink"
+         {% if active == "contact" %}
+             id="on"
+         {% endif %}>
+            <img class= "contact1"src="{% static 'db/contactme1.png'%}" alt="">
+            <img class= "contact2" src="{% static 'db/contactme2.png'%}" alt="">
+            <p class="p5"> Contact Me </p>
+       </a>
+            
+                
+           
+    </nav>
+   <div>
+    {% block infuse%}
+
+
+    {% endblock %}
+   </div>
+    
+</body>
+</html>

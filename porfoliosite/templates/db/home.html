@@ -1,0 +1,250 @@
+{% extends "db/virtualpage.html"%}
+{% load static%}
+{% block infuse %}
+<style>
+    div{
+        background-color: white;
+        /* display: inline-block; */
+        width: 100%;
+        height: 695px;
+        color: black;
+        position: relative;
+        /* padding: 15px 30px; */
+        overflow: hidden;
+        transition: 0.2s;
+    }
+    div span{
+        position: absolute;
+        display: block;
+    }
+    div span:nth-child(1){
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, transparent, #ED7899);
+
+    }
+    div:hover span:nth-child(1){
+        left: 100%;
+        transition: 1s;
+    }
+    div span:nth-child(3){
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(270deg, transparent, #ED7899);
+
+    }
+    div:hover span:nth-child(3){
+        right: 100%;
+        transition: 1s;
+        transition-delay: 0.5s;
+    }
+    div span:nth-child(2){
+        top: -100%;
+        right: 0;
+        width: 5px;
+        height: 695px;
+        background: linear-gradient(180deg, transparent, #ED7899);
+
+    }
+    div:hover span:nth-child(2){
+        top: 100%;
+        transition: 1s;
+        transition-delay: 0.25s;
+    }
+    div span:nth-child(4){
+        bottom: -100%;
+        left: 0;
+        width: 5px;
+        height: 695px;
+        background: linear-gradient(360deg, transparent, #ED7899);
+
+    }
+    div:hover span:nth-child(4){
+        bottom: 100%;
+        transition: 1s;
+        transition-delay: 0.75s;
+    }
+    /* @media screen and (max-width: 1440px){
+        div{
+            width: 100%;
+            height: 935px;
+            
+        }
+        div span:nth-child(2){
+            top: -100%;
+            right: 0;
+            width: 5px;
+            height: 935px;
+            background: linear-gradient(180deg, transparent,#ED7899);
+
+        }
+        div span:nth-child(4){
+            bottom: -100%;
+            left: 0;
+            width: 5px;
+            height:  935px;
+            background: linear-gradient(360deg, transparent, #ED7899);
+        }
+    } */
+    @media screen and (max-width: 1050px){
+        div{
+            width: 100%;
+            height: 810px;
+            
+        }
+        div span:nth-child(2){
+            top: -100%;
+            right: 0;
+            width: 5px;
+            height: 810px;
+            background: linear-gradient(180deg, transparent, #ED7899);
+
+        }
+        div span:nth-child(4){
+            bottom: -100%;
+            left: 0;
+            width: 5px;
+            height:  810px;
+            background: linear-gradient(360deg, transparent, #ED7899);
+        }
+    }
+    @media screen and (max-width: 900px){
+        div{
+            width: 100%;
+            height: 608px;
+            
+        }
+        div span:nth-child(2){
+            top: -100%;
+            right: 0;
+            width: 5px;
+            height: 608px;
+            background: linear-gradient(180deg, transparent, #ED7899);
+
+        }
+        div span:nth-child(4){
+            bottom: -100%;
+            left: 0;
+            width: 5px;
+            height:  608px;
+            background: linear-gradient(360deg, transparent, #ED7899);
+        }
+    }
+    .home-intro{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+   .intro{
+       width: 50%;
+       height: 695px;
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       align-content: center;
+   }
+   .picture{
+       width: 50%;
+       height: 695px;
+   }
+   .about-me{
+       padding: 30px;
+   }
+</style>
+<div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <section class="home-intro">
+        <main class="intro">
+            <article class="about-me">
+                <h2>
+                    HELLO!
+                </h2>
+                <style>
+                    h2{
+                        font-size: 70px;
+                        font-weight: bolder;
+                        padding: 5px;
+                        color: #ED7899;
+                        
+                    }
+                </style>
+                <p class="name">
+                    I AM UTIBEABASI
+                </p>
+                <style>
+                    .name{
+                        font-size: 40px;
+                        font-weight: bolder;
+                        padding: 5px;
+                        color: gray;
+                    }
+                </style>
+                <p class="skill">
+                    A Full Stack Software Developer with a lot of experience in both frontend and backend technologies.
+                </p>
+                <style>
+                    .skill{
+                        font-size: 25px;
+                        font-weight: bolder;
+                        margin-top: 5px;
+                        padding: 5px;
+                        width: 90%;
+                    }
+                </style>
+                <p class="description">
+                    I love everything technology. I am intutive, smart, disciplined, respectful, a team player and a leader. These are traits that i idolise and follow with every passsing day. I am very confident that i am the man for the job.
+                </p>
+                <style>
+                    .description{
+                        font-size: x-large;
+                        font-weight: lighter;
+                        margin-top: 5px;
+                        padding: 5px;
+                        width: 80%;
+                    }
+                </style>
+                <p class="welcome">
+                    Please use the navigation menu to explore.
+                </p>
+                <style>
+                    .welcome{
+                        font-size: x-large;
+                        font-weight: lighter;
+                        margin-top: 5px;
+                        padding: 5px;
+                        width: 65%;
+                        
+                    }
+                </style>
+            </article>
+        </main>
+        <main class="picture">
+          <img class="personal-pic" src="{% static 'db/personalpic.jpg' %}" alt="">
+        </main>
+        <style>
+            .picture{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-content: center;
+                padding: 50px;
+            }
+            .personal-pic{
+                display: block;
+                object-fit: cover;
+                max-height: fit-content;
+                width: 100%;
+            }
+        </style>
+    </section>
+    
+</div>
+
+{% endblock %}

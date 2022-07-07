@@ -1,0 +1,280 @@
+{% extends "db/virtualpage.html"%}
+{% block infuse %}
+
+<style>
+    div{
+        background-color: white;
+        /* display: inline-block; */
+        width: 100%;
+        height: 695px;
+        color: black;
+        position: relative;
+        /* padding: 15px 30px; */
+        overflow: hidden;
+        transition: 0.2s;
+    }
+    div span{
+        position: absolute;
+        display: block;
+    }
+    div span:nth-child(1){
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, transparent, #E1B370);
+
+    }
+    div:hover span:nth-child(1){
+        left: 100%;
+        transition: 1s;
+    }
+    div span:nth-child(3){
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(270deg, transparent, #E1B370);
+
+    }
+    div:hover span:nth-child(3){
+        right: 100%;
+        transition: 1s;
+        transition-delay: 0.5s;
+    }
+    div span:nth-child(2){
+        top: -100%;
+        right: 0;
+        width: 5px;
+        height: 695px;
+        background: linear-gradient(180deg, transparent, #E1B370);
+
+    }
+    div:hover span:nth-child(2){
+        top: 100%;
+        transition: 1s;
+        transition-delay: 0.25s;
+    }
+    div span:nth-child(4){
+        bottom: -100%;
+        left: 0;
+        width: 5px;
+        height: 695px;
+        background: linear-gradient(360deg, transparent, #E1B370);
+
+    }
+    div:hover span:nth-child(4){
+        bottom: 100%;
+        transition: 1s;
+        transition-delay: 0.75s;
+    }
+    /* @media screen and (max-width: 1440px){
+        div{
+            width: 100%;
+            height: 935px;
+            
+        }
+        div span:nth-child(2){
+            top: -100%;
+            right: 0;
+            width: 5px;
+            height: 935px;
+            background: linear-gradient(180deg, transparent,#E1B370);
+
+        }
+        div span:nth-child(4){
+            bottom: -100%;
+            left: 0;
+            width: 5px;
+            height:  935px;
+            background: linear-gradient(360deg, transparent, #E1B370);
+        }
+    } */
+    @media screen and (max-width: 1050px){
+        div{
+            width: 100%;
+            height: 810px;
+            
+        }
+        div span:nth-child(2){
+            top: -100%;
+            right: 0;
+            width: 5px;
+            height: 810px;
+            background: linear-gradient(180deg, transparent, #E1B370);
+
+        }
+        div span:nth-child(4){
+            bottom: -100%;
+            left: 0;
+            width: 5px;
+            height:  810px;
+            background: linear-gradient(360deg, transparent, #E1B370);
+        }
+    }
+    @media screen and (max-width: 900px){
+        div{
+            width: 100%;
+            height: 608px;
+            
+        }
+        div span:nth-child(2){
+            top: -100%;
+            right: 0;
+            width: 5px;
+            height: 608px;
+            background: linear-gradient(180deg, transparent, #E1B370);
+
+        }
+        div span:nth-child(4){
+            bottom: -100%;
+            left: 0;
+            width: 5px;
+            height:  608px;
+            background: linear-gradient(360deg, transparent, #E1B370);
+        }
+    }
+    .download-cv{
+        margin-left: 1100px;
+        margin-top: 20px;
+        padding: 5px;
+        color: white;
+        background-color: grey;
+        border: none;
+        height: 50px;
+        width: 10%;
+        border-radius: 10px;
+        font-size: large;
+        font-weight: lighter;
+    }
+    .download-cv:hover{
+        opacity: 0.8;
+    }
+    .cv-display{
+        height: 600px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+        padding: 20px;
+    }
+    .cv-display > article{
+        width: 50%;
+        /* padding: 20px; */
+    }
+    .personal-information{
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    .education{
+        border-bottom: 1px solid black;
+    }
+    .work-experience{
+        border-right: 1px solid black;
+    }
+    .education > h2{
+        margin-left: 15px;
+    }
+    .skills-certification > h2{
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    .work-experience > h2{
+        margin-top: 15px;
+        
+    }
+    article > p{
+        font-size: large;
+        font-weight: lighter;
+        
+    }
+    .education > p{
+        margin-left: 15px;
+    }
+    .skills-certification > p{
+        margin-top: 15px;
+        margin-left: 15px;
+
+    }
+    .personal-information > p{
+        margin-top: 15px;
+    }
+    .education > p{
+        margin-top: 15px;
+    }
+    article > h2{
+        color: gray;
+    }
+</style>
+<div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <section class="cv-section">
+        <main class="download-button-wrapper"> 
+            <button class="download-cv">
+                Download CV
+            </button>
+        </main>
+        <main class="cv-display">
+            <article class="personal-information">
+                <h2>
+                    PERSONAL INFORMATION
+                </h2>
+                <p> NAME: Ekpenyong Utibeabasi Ukeme </p>
+                <p> PHONE: +234 913 878 8713 </p>
+                <p> EMAIL: utibeabasiekpenyong@gmail.com </p>
+                <p> LOCATION: Uyo, Akwa Ibom, Nigeria.</p>
+
+
+            </article>
+            <article class="education">
+                <h2>
+                    EDUCATION
+                </h2>
+                <p>Bachelor's degree in Computer Engineering </p>
+                <p>University of Uyo, Uyo. Akwa Ibom, Nigeria.</p>
+                <p>September 2017 to September 2022 </p>
+
+            </article>
+            <article class="work-experience">
+                <h2>
+                    WORK EXPERIENCE
+                </h2>
+                <style>
+                    .tutor{
+                        margin-top: 15px;
+                    }
+                </style>
+                <p class="tutor">Tutor</p>
+                <p> The Roothub - uyo </p>
+                <p> Teach and lecture students and upcoming developers</p>
+                <style>
+                    .full-stack{
+                        margin-top: 15px;
+                    }
+                </style>
+                <p class="full-stack"> Django Full Stack Developer </p>
+                <p> The Roothub - Akwa Ibom, Uyo </p>
+                <p> Building and integrating backend to web services
+                    using python to automate and solve problems </p>
+
+            </article>
+            <article class="skills-certification">
+                <h2>
+                    SKILLS AND CERTIFICATION
+                </h2>
+                <p> HTML</p>
+                <p> CSS</p>
+                <p> Python Programming</p>
+                <p> React.js</p>
+                <p> Django</p>
+                <p> Full Stack Developer Certification at The Roothub</p>
+
+            </article>
+        </main>
+    </section>
+    
+</div>
+
+{% endblock %}

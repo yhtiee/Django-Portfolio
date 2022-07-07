@@ -1,0 +1,261 @@
+{% extends "db/virtualpage.html"%}
+{% load static %}
+{% block infuse %}
+
+<style>
+    div{
+        background-color: white;
+        /* display: inline-block; */
+        width: 100%;
+        height: 695px;
+        color: black;
+        position: relative;
+        /* padding: 15px 30px; */
+        overflow: hidden;
+        transition: 0.2s;
+    }
+    div span{
+        position: absolute;
+        display: block;
+    }
+    div span:nth-child(1){
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, transparent, #2E4191);
+
+    }
+    div:hover span:nth-child(1){
+        left: 100%;
+        transition: 1s;
+    }
+    div span:nth-child(3){
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(270deg, transparent, #2E4191);
+
+    }
+    div:hover span:nth-child(3){
+        right: 100%;
+        transition: 1s;
+        transition-delay: 0.5s;
+    }
+    div span:nth-child(2){
+        top: -100%;
+        right: 0;
+        width: 5px;
+        height: 695px;
+        background: linear-gradient(180deg, transparent, #2E4191);
+
+    }
+    div:hover span:nth-child(2){
+        top: 100%;
+        transition: 1s;
+        transition-delay: 0.25s;
+    }
+    div span:nth-child(4){
+        bottom: -100%;
+        left: 0;
+        width: 5px;
+        height: 695px;
+        background: linear-gradient(360deg, transparent, #2E4191);
+
+    }
+    div:hover span:nth-child(4){
+        bottom: 100%;
+        transition: 1s;
+        transition-delay: 0.75s;
+    }
+    /* @media screen and (max-width: 1440px){
+        div{
+            width: 100%;
+            height: 935px;
+            
+        }
+        div span:nth-child(2){
+            top: -100%;
+            right: 0;
+            width: 5px;
+            height: 935px;
+            background: linear-gradient(180deg, transparent,#2E4191);
+
+        }
+        div span:nth-child(4){
+            bottom: -100%;
+            left: 0;
+            width: 5px;
+            height:  935px;
+            background: linear-gradient(360deg, transparent, #2E4191);
+        }
+    } */
+    @media screen and (max-width: 1050px){
+        div{
+            width: 100%;
+            height: 810px;
+            
+        }
+        div span:nth-child(2){
+            top: -100%;
+            right: 0;
+            width: 5px;
+            height: 810px;
+            background: linear-gradient(180deg, transparent, #2E4191);
+
+        }
+        div span:nth-child(4){
+            bottom: -100%;
+            left: 0;
+            width: 5px;
+            height:  810px;
+            background: linear-gradient(360deg, transparent, #2E4191);
+        }
+    }
+    @media screen and (max-width: 900px){
+        div{
+            width: 100%;
+            height: 608px;
+            
+        }
+        div span:nth-child(2){
+            top: -100%;
+            right: 0;
+            width: 5px;
+            height: 608px;
+            background: linear-gradient(180deg, transparent, #2E4191);
+
+        }
+        div span:nth-child(4){
+            bottom: -100%;
+            left: 0;
+            width: 5px;
+            height:  608px;
+            background: linear-gradient(360deg, transparent, #2E4191);
+        }
+    }
+    .my-skills{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: center;
+        background-color: white;
+        width: 100%;
+        height: 695px;
+    }
+    .my-skills > main{
+        background-color: white;
+        width: 30%;
+        height: 300px;
+        margin-bottom: 20px;
+        transition: 0.7s;
+        box-shadow: 0px 0px 12px 1px #2E4191
+    }
+    .my-skills > main:hover{
+        box-shadow: 0px 0px 12px 1px #2E4191
+    }
+    .css > img{
+        height: 70px;
+        margin-top: 15px;
+        margin-left: 15px;
+        
+    }
+    .html > img{
+        height: 100px;
+    }
+    .javascript > img{
+        height: 80px;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    .python > img{
+        height: 70px;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    .React > img{
+        height: 70px;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    .django > img{
+        height: 100px;
+        margin-left: 15px;
+    }
+    .css-note{
+        margin-top: 15px;
+        margin-left: 15px;
+        font-size: x-large;
+        font-weight: lighter;
+    }
+    .html-note{
+        margin-left: 10px;
+        font-size: x-large;
+        font-weight: lighter;
+    }
+    .js-note{
+        margin-top: 15px;
+        margin-left: 15px;
+        font-size: x-large;
+        font-weight: lighter;
+    }
+    .python-note{
+        margin-top: 15px;
+        margin-left: 15px;
+        font-size: x-large;
+        font-weight: lighter;
+    }
+    .django-note{
+        /* margin-top: 15px; */
+        margin-left: 15px;
+        font-size: x-large;
+        font-weight: lighter;
+    }
+    .react-note{
+        /* margin-top: 15px; */
+        margin-left: 15px;
+        font-size: x-large;
+        font-weight: lighter;
+    }
+  
+  
+  
+   
+</style>
+<div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <section class="my-skills">
+        <main class="html">
+            <img src="{% static 'db/html.jpg' %}" alt="">
+            <p class="html-note"> I have years  of experience in using the Hyper Text Markup Language in building my web structures.</p>
+        </main>
+        <main class="css">
+            <img src="{% static 'db/css3.png' %}" alt="">
+            <p class="css-note"> I have years of experience in using the Cascading Style Sheet for desiging my web structures to give them a beautiful feel</p>
+        </main>
+        <main class="javascript">
+            <img src="{% static 'db/javascript.png' %}" alt="">
+            <p class="js-note"> I have years of experience in using Java Script for DOM manipulation and building user interactions on my web sites.</p>
+        </main>
+        <main class="python">
+            <img src="{% static 'db/python1.png' %}" alt="">
+            <p class="python-note"> I have years of experience in using Python programmming language for automation and solving real life problems. </p>
+        </main>
+        <main class="django">
+            <img src="{% static 'db/django.png' %}" alt="">
+            <p class="django-note"> With the knowledge of python programming language i use one of its framework Django to build backend of web applications to store and supply data to the frontend.  </p>
+        </main>
+        <main class="React">
+            <img src="{% static 'db/REACT.png' %}" alt="">
+            <p class="react-note"> With my knowledge of javaScript i use a frontend framework called React to build my web structures and include interactions in form of components for bigger or larger web application.  </p>
+        </main>
+    </section>
+
+    
+</div>
+
+{% endblock %}
